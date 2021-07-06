@@ -1,0 +1,391 @@
+/*
+*
+* =====================
+* FONTS
+* =====================
+*
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/*
+*
+* =====================
+* GENERAL
+* =====================
+*
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.img-fluid {
+    max-width: 100%;
+    min-height: auto;
+}
+
+/*
+*
+* =====================
+* BODY
+* =====================
+*
+*/
+body {
+    background: #f9f9f9;
+}
+
+/*
+*
+* =====================
+* NAVIGATION
+* =====================
+*
+*/
+
+.top-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4rem 6rem;
+}
+
+.brand {
+    width: 10rem;
+    height: 2rem;
+}
+
+.right .form-control {
+    background-color: transparent;
+    border: 2px solid #5CB85C!important;
+    outline: none;
+    border-radius: 1.9rem;
+}
+
+.right .search-bar  {
+    position: relative;
+    width: 18.7rem;
+    height: 3rem;
+}
+
+.right .search-bar .form-control {
+    top: 0.3rem;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    padding: 0.5rem 0.9rem;
+}
+
+.right .search-bar .btn-icon {
+    position: absolute;
+    top: 0;
+    width: 3.7rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+.right .search-bar .search-icon .fas {
+    position: absolute;
+    top: 46%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: gray;
+}
+
+.right .search-bar .form-control {
+    padding-left: 2.5rem;
+}
+
+.form-control::placeholder {
+    color: gray;
+    font-weight: bold;
+}
+
+@media screen and (max-width:860px) {
+    .right .search-bar .search-icon .fas {
+        top: 52%;
+    }
+    
+    header {
+        display: none;
+    }
+
+}
+
+.nav-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4rem 6rem;
+}
+
+.navbar-brand-two {
+    display: none;
+}
+
+.nav-header .menu {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-header .menu a {
+    color: #383838;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .8rem;
+    margin: 0 2rem;
+    padding: 0.6rem;
+    transition: 0.6s;
+}
+
+.nav-header .menu a:hover {
+    border-bottom: 2px solid #5CB85C;
+}
+
+.nav-header .icon {
+    color: #171a19;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: none;
+} 
+
+@media screen and (max-width: 860px) {
+    .nav-header .icon {
+        display: block;
+        color: #5CB85C;
+    }
+
+
+    .nav-header {
+        padding: 1.5rem 1rem;
+    }
+
+    .navbar-brand-two {
+        display: block;
+    }
+
+    .nav-header .menu {
+        position: fixed;
+        background: #f9f9f9;
+        flex-direction: column;
+        min-width: 25rem;
+        height: 100vh;
+        top: 0;
+        right: 100%;
+        padding: 5rem 3rem;
+    }
+
+    .nav-header .menu .active {
+        right: 0;
+    }
+
+    .nav-header .menu .close-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1.56rem;
+    }
+
+    .nav-header .menu a {
+        display: block;
+        font-size: 1.25rem;
+        margin: 1.25rem;
+        padding: 0 0.93rem;
+    }
+}
+
+/*
+*
+* =====================
+* HERO SECTION
+* =====================
+*
+*/
+.hero {
+    width: 100%;
+    height: 65rem;
+    color: white;
+    margin: 0 auto;
+    background: url("/Assets/imgs/unnamed\ 1.png") no-repeat center / cover;
+   
+}
+
+.hero-content {
+    width: 90%;
+    height: inherit;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-info {
+    margin-top: 10rem;
+}
+
+.hero-content .hero-info h1 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: .3rem;
+    line-height: 4.5rem;
+    margin-bottom: 5rem;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .hero-info a {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    background-color: #5CB85C;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+
+    .hero-content .hero-info h1 {
+        font-size: 3rem;
+        letter-spacing: normal;
+    }
+
+
+}
+
+/*
+*
+* =====================
+* MAIN
+* =====================
+*
+*/
+.news {
+    width: 95%;
+    margin: 4rem auto;
+   
+}
+
+.news h2 {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.news-content {
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+
+.news-img {
+    width: 100%;
+}
+
+
+.news-content .news-info p {
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
+.news-content .news-info a {
+    color: white;
+    text-align: center;
+    display: inline-block;
+    background-color: #5CB85C;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .news-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*
+*
+* =====================
+* FOOTER
+* =====================
+*
+*/
+.footer {
+    width: 100%;
+}
+
+.footer-info {
+    width: 100%;
+    padding: 2rem;
+    border-top: 2px solid #5CB85C;
+    background-color: #FFF;
+}
+
+.footer-content-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    max-width: 50%;
+    color: #5CB85C;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.footer-content-two {
+    padding: 4rem 4rem;
+    font-size: 1rem;
+    background-color: #5CB85C;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fa-copyright {
+    margin-right: .3rem;
+}
+
+.footer-nav p {
+    color: white;
+    text-transform: uppercase;
+}
+
+.footer-nav a {
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: .9rem;
+    font-weight: 500;
+    padding: 0.6rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .footer-text {
+        max-width: 100%;
+        font-size: 2rem;
+    }
+}
+
+
