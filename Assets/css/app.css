@@ -163,29 +163,29 @@ body {
     width: 100%;
 }
 
-.sub-menu-1 {
-    display: none;
-}
-
-
 .nav-header .menu li:hover .sub-menu-1 {
     display: block;
-    position: absolute;
-    background: #f9f9f9;
-    margin-top: 1.2rem;
-    margin-left: -0.93rem;
+    margin-top: .7rem;
 }
 
 .nav-header .menu li:hover .sub-menu-1 ul {
     display: block;
-    margin: 0.62rem;
-    
 }
 
 .nav-header .menu li:hover .sub-menu-1 ul li {
-    width: 9.3rem;
-    padding: 0.62rem;
     text-transform: uppercase;
+}
+
+.sub-menu-1 {
+    position: absolute;
+    background: #f9f9f9;
+    display: none;
+}
+
+.sub-menu-1 li {
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     background: transparent;
 }
 
@@ -213,7 +213,6 @@ body {
         justify-content: space-between;
         align-items: center;
     }
-
 
     .nav-header {
         padding: 1.5rem 1rem;
