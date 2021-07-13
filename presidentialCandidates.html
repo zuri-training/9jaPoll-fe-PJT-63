@@ -154,16 +154,21 @@
             console.log(json);
 
             json.forEach(each => {
+              if (each.post_type == "PRESIDENTIAL") {
+                
+              
                 console.log(each);
 
                 document.getElementById("cand-list").innerHTML += `<figure class="candidates">
-            <div class="image"><img src="img/presidentialImg/image1.jpg" alt="candidate1" /></div>
-            <figcaption>
-              <h3>${each.cand_name}</h3>
-              <h5>${each.party}</h5>
-              <button id="${each.id}" class="more" onclick="saveid(this.id)">Read more</button>
-            </figcaption>
-          </figure>`
+                  <div class="image"><img src="media and individual candidate page/images/${each.profile_image}" alt="candidate1" /></div>
+                  <figcaption>
+                    <h3>${each.cand_name}</h3>
+                    <h5>${each.party}</h5>
+                    <button id="${each.id}" class="more" onclick="saveid(this.id)">Read more</button>
+                  </figcaption>
+                </figure>`
+
+              }
                 
             });
         };
