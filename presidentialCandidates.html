@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>presidential candidate</title>
-        <link href="assets/presidential-faq.css" rel="stylesheet">
+        <link href="Assets/css/presidential-faq.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/64b4a6db88.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -31,9 +31,9 @@
       </header>
         
         <h1>PRESIDENTIAL ELECTION CANDIDATES</h1>
-       <div class="presidentialCandidates">
+       <div id="cand-list" class="presidentialCandidates">
           <!--first row-->
-          <figure class="candidates">
+          <!-- <figure class="candidates">
             <div class="image"><img src="img/presidentialImg/image1.jpg" alt="candidate1" /></div>
             <figcaption>
               <h3>Candidate one</h3>
@@ -83,7 +83,7 @@
           </figcaption>
         </figure>
         <!--second row-->
-        <figure class="candidates">
+        <!-- <figure class="candidates">
           <div class="image"><img src="img/presidentialImg/image1.jpg" alt="candidate1" /></div>
           <figcaption>
             <h3>Candidate four</h3>
@@ -131,7 +131,7 @@
             <a href="#"> <i class="ion-social-instagram"></i></a>
           </div>
         </figcaption>
-      </figure>
+      </figure> -->
     </div>
 <!-- footer-->
     <footer>
@@ -145,6 +145,40 @@
         </ul>
       </div>
     </footer>
-       <script type="text/javascript" src="assets/presidential-faq.js"></script>
+       <!-- <script type="text/javascript" src="assets/presidential-faq.js"></script> -->
+
+       <script>
+        const getData = async (url) => {
+            const res = await fetch(url);
+            const json = await res.json();
+            console.log(json);
+
+            json.forEach(each => {
+                console.log(each);
+
+                document.getElementById("cand-list").innerHTML += `<figure class="candidates">
+            <div class="image"><img src="img/presidentialImg/image1.jpg" alt="candidate1" /></div>
+            <figcaption>
+              <h3>${each.cand_name}</h3>
+              <h5>${each.party}</h5>
+              <button id="${each.id}" class="more" onclick="saveid(this.id)">Read more</button>
+            </figcaption>
+          </figure>`
+                
+            });
+        };
+
+
+        const saveid = (id) => {
+            localStorage.setItem("value", id);
+
+            let val = localStorage.getItem("value");
+            //console.log(val);
+            window.location.href = "media and individual candidate page/presidential.html";
+        }
+
+        const url = "https://poll9ja.herokuapp.com/api/candprofile";
+        getData(url);
+    </script>
   </body>
 </html>
