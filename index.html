@@ -24,37 +24,40 @@
                     <div class="btn-icon search-icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <input class="form-control" type="search" placeholder="Search">
+                    <input id="searchField" class="form-control" type="text" placeholder="Search">
                 </form>
             </div>
         </div>
     </header>
     <!-- Nav Menu -->
-    <div class="nav-header">
-        <a href="#" class="navbar-brand-two"><img src="Assets/imgs/Logo.png" class="brand" alt=""/></a>
-        <div id="main-nav" class="menu">
-            <div class="icon">
-                <i class="fas fa-times close-btn"></i>
-            </div>
-            <ul>
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Political Parties</a></li>
-                <li><a href="#" class="nav-link">Electorial Candidates</a>
-                    <div class="sub-menu-1">
-                        <ul>
-                            <li><a href="#" class="nav-link">Presidential</a></li><hr>
-                            <li><a href="#" class="nav-link">Gubernatorial</a></li><hr>
-                            <li><a href="#" class="nav-link">Senatorial</a></li><hr>
-                            <li><a href="#" class="nav-link">House of Assembly</a></li>
-                        </ul>
+    <div class="header">
+        <div class="container">
+            <div class="header-main">
+                <a href="#" class="navbar-brand-two"><img src="Assets/imgs/Logo.png" class="brand" alt=""/></a>
+                <div class="open-icon">
+                    <span></span>
+                </div>
+                <div class="menu-overlay"></div>
+                <nav class="nav-menu">
+                    <div class="close-icon">
+                        <i class="fas fa-times close-btn"></i>
                     </div>
-                </li>
-                <li> <a href="#" class="nav-link">Media</a></li>
-                <li> <a href="#" class="nav-link last">Faq</a></li>
-            </ul>
-        </div>
-        <div class="icon">
-            <i class="fas fa-bars menu-btn"></i>
+                    <ul class="menu">
+                        <li class="menu-item"><a href="#">Home</a></li>
+                        <li class="menu-item"><a href="#">Political Parties</a></li>
+                        <li class="menu-item sub-menu-parent"><a href="#" data-toggle="sub-menu">Electorial Candidates<i class="plus"></i></a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="#">Presidential</a></li>
+                                <li class="menu-item"><a href="#">Gubernatorial</a></li>
+                                <li class="menu-item"><a href="#">Senatorial</a></li>
+                                <li class="menu-item"><a href="#" class="last">House of Assembly</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="#">Media</a></li>
+                        <li class="menu-item"><a href="#">Faq</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 
