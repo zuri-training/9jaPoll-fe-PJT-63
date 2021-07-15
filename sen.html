@@ -153,7 +153,7 @@
             const json = await res.json();
             console.log(json);
 
-            json.forEach(each => {
+            json.forEach((each, index) => {
               if (each.post_type == "SENATORIAL") {
                 
               
@@ -164,7 +164,7 @@
                   <figcaption>
                     <h3>${each.cand_name}</h3>
                     <h5>${each.party}</h5>
-                    <button id="${each.id}" class="more" onclick="saveid(this.id)">Read more</button>
+                    <button id="${index}" class="more" onclick="saveid(this.id)">Read more</button>
                   </figcaption>
                 </figure>`
 
@@ -178,7 +178,7 @@
             localStorage.setItem("value", id);
 
             let val = localStorage.getItem("value");
-            //console.log(val);
+            console.log("value is"+val);
             window.location.href = "media and individual candidate page/presidential.html";
         }
 

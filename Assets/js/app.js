@@ -24,10 +24,10 @@ const getData = async (url) => {
     // let jsonCand = json.cand_name;
 
 
-    json.forEach(each => {
+    json.forEach((each, index) => {
         if (each.cand_name == candName) {
             console.log(each);
-            let id = each.id;
+            let id = index;
             localStorage.setItem("value", id);
 
             let val = localStorage.getItem("value");
