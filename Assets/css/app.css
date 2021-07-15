@@ -39,6 +39,10 @@ body {
     background: #f9f9f9;
 }
 
+body .disabledScroll {
+    overflow-y: hidden;
+}
+
 /*
 *
 * =====================
@@ -47,34 +51,37 @@ body {
 *
 */
 
-.top-header {
-    width: 100%;
+.header {
+    background-color: #f9f9f9;
+}
+
+.header .site-header__start .brand {
+    width: 12rem;
+    height: 2rem;
+    padding: 0 0.63rem;
+}
+
+.site-header__wrapper-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .4rem;
-    background: #f9f9f9;
 }
 
-.brand {
-    width: 10rem;
-    height: 2rem;
-}
 
-.right .form-control {
+.form-control {
     background-color: #D8D8D8;
     border: none;
     outline: none;
     border-radius: 1.9rem;
 }
 
-.right .search-bar  {
+.search-bar  {
     position: relative;
     width: 18.7rem;
     height: 3rem;
 }
 
-.right .search-bar .form-control {
+.search-bar .form-control {
     top: 0.5rem;
     left: 0;
     width: 89%;
@@ -82,7 +89,7 @@ body {
     padding: 0.5rem 0.9rem;
 }
 
-.right .search-bar .btn-icon {
+.search-bar .btn-icon {
     position: absolute;
     top: 0;
     width: 3.7rem;
@@ -90,7 +97,7 @@ body {
     cursor: pointer;
 }
 
-.right .search-bar .search-icon .fas {
+.search-bar .search-icon .fas {
     z-index: 999;
     position: absolute;
     top: 46%;
@@ -99,7 +106,7 @@ body {
     color: gray;
 }
 
-.right .search-bar .form-control {
+.search-bar .form-control {
     padding-left: 2.5rem;
 }
 
@@ -110,66 +117,68 @@ body {
 
 
 @media screen and (max-width:860px) {
-    .right .search-bar .search-icon .fas {
+    .site-header__end .search-bar .search-icon .fas {
         top: 52%;
     }
     
-    header {
-        display: none;
-    }
-
 }
 
-.navbar-brand-two {
+.site-header__bottom {
+    position: relative;
+}
+
+.site-header__bottom .brand {
     display: none;
 }
 
-.container {
-    width: 100%;
-    margin: auto;
+.site-header__wrapper, .site-header__wrapper-top {
+    padding: .5rem;
 }
 
-.header {
-    position: relative;
-    z-index: 99;
-    padding: 0.3rem;
-} 
-
-.header-main {
-    background-color: #f9f9f9;
-    padding: 0.62rem 2rem;
+.nav {
+    margin: 0 1rem;
 }
 
-.header .nav-menu {
-    padding: 0 0.62rem;
-}
-
-.header .menu {
+.nav .nav__wrapper {
     display: flex;
-    /* width: 100%; */
     justify-content: space-between;
     align-items: center;
 }
 
-.header .menu > .menu-item {
-    display: inline-block;
-    position: relative;
-}
-
-.header .menu > .menu-item > a {
+.nav__item a {
     display: block;
-    padding: 0.7rem 0;
+    padding: 1.5rem 1.25rem;
     color: #383838;
     font-weight: 700;
     text-transform: capitalize;
+    position: relative;
 }
 
-.header .menu > .menu-item > .sub-menu {
+.nav__item a::after {
+    content: "";
+    background: #5CB85C;
+    width: 0;
+    height: 0.12rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+} 
+
+.nav__item a:hover::after {
+    width: 100%;
+}
+
+.nav .nav__wrapper .nav__item > .sub-menu > .nav__item > a:hover::after {
+    width: 0;
+}
+
+.nav .nav__wrapper .nav__item > .sub-menu {
     border: 2px solid #5CB85C;
     width: 15rem;
     position: absolute;
-    top: 3.5rem;
-    right: -2rem;
+    top: 5.3rem;
+    right: 48rem;
     padding: 0.62rem 0;
     background-color: #f9f9f9;
     transform: translateY(0.62rem);
@@ -178,17 +187,13 @@ body {
     visibility: hidden;
 }
 
-.header .menu > .sub-menu-parent:hover > .sub-menu {
+.nav .nav__wrapper > .sub-menu-parent:hover > .sub-menu {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
 }
 
-.header .menu > .menu-item > .sub-menu > .menu-item {
-    display: block;
-}
-
-.header .menu > .menu-item > .sub-menu > .menu-item > a {
+.nav .nav__wrapper .nav__item > .sub-menu > .nav__item > a {
     display: block;
     padding: 0.62rem 1.25rem;
     color: #383838;
@@ -202,59 +207,18 @@ body {
     border-bottom: none!important;
 }
 
-.header .open-icon {
-    height: 2.12rem;
-    width: 2.5rem;
-    margin-right: 1rem;
-    display: none;
-    align-items: center;
-    justify-content: center;
+.header .open-btn {
+    padding-right: 3rem;
     cursor: pointer;
+    display: none;
 } 
 
-.header .open-icon span {
-    display: block;
-    height: 0.18rem;
-    width: 1.9rem;
-    position: relative;
-    background-color: #5CB85C;
-}
-
-.header .open-icon span:before,
-.header .open-icon span:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #5CB85C;
-}
-
-.header .open-icon span:before {
-    top: -0.43rem;
-}
-
-.header .open-icon span:after {
-    top: 0.43rem;
-}
-
-.header .close-icon {
-    height: 2.5rem;
-    width: 2.5rem;
-    background-color: #FFF;
-    margin-bottom: 2rem;
-    cursor: pointer;
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.header .close-btn {
+.site-header__middle .icon {
     font-size: 2rem;
     color: #5CB85C;
 }
 
-.header .menu-overlay {
+.wrapper .menu-overlay {
     position: fixed;
     z-index: 999;
     background-color: rgba(0, 0, 0, 0.5);
@@ -267,67 +231,84 @@ body {
     transition: all 0.3s ease;
 }
 
-.header .menu-overlay .active {
+.wrapper .menu-overlay .show {
     visibility: visible;
     opacity: 1;
 }
 
-@media screen and (max-width: 860px) {
-    body .disabledScroll {
-        overflow: hidden;
-    }
 
-    .navbar-brand-two {
+
+@media screen and (max-width: 860px) {
+    
+
+    .header .open-btn {
         display: block;
     }
 
-    .header .nav-menu {
-        position: fixed;
-        flex-direction: column;
-        right: -25rem;
-        visibility: hidden;
-        width: 25rem;
-        height: 100%;
-        top: 0;
-        overflow-y: auto;
-        background-color: #383838;
-        z-index: 1000;
-        padding: 5rem 3rem;
-        transition: all 0.5s ease;
-    }
-
-    .header .nav-menu .open {
-        visibility: visible;
+    .nav__wrapper {
+        position: absolute;
+        top: 100%;
         right: 0;
+        left: 0;
+        z-index: 1;
+        background-color: #222;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     }
 
-    .header .menu {
+    .nav__wrapper.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .site-header__middle {
         display: flex;
-        flex-direction: column; 
-        align-items: flex-start;
+        justify-content: space-between;
+    }
+    
+
+    .nav .nav__wrapper {
+        display: block;
+        padding-top: 2rem;
+        padding-left: 1rem;
+        padding-bottom: 2rem;
     }
 
-    .header .menu > .menu-item > a {
-        color: #f9f9f9;
-        padding: 0.75rem 0.93rem;
-        font-size: 1.2rem;
-        margin: 1.25rem;
+    .nav .nav__wrapper a {
+        border-bottom: 1px solid gray;
     }
 
-    .header .menu > .menu-item > .sub-menu > .menu-item > a {
+    .nav .nav__wrapper .nav__item > .sub-menu > .nav__item > a {
         color: #FFF;
         text-align: left;
         border-bottom: none;
         padding: 0.93rem 2.8rem;
         font-size: .94rem;
+        text-transform: capitalize;
     }
 
-    .header .menu > .menu-item > .sub-menu {
+    .nav__item a:hover::after {
+        width: 0;
+    }
+    
+    .nav .nav__wrapper .nav__item > .sub-menu > .nav__item > a:hover::after {
+        width: 0;
+    }
+
+    .nav__item a:hover,
+    .nav .nav__wrapper .nav__item > .sub-menu > .nav__item > a:hover {
+        color: #5CB85C;
+    }
+
+    .nav .nav__wrapper .nav__item > .sub-menu {
         width: 100%;
         position: relative;
         opacity: 1;
         visibility: visible;
-        top: -1.5rem;
+        top: auto;
         border: none;
         color: #FFF;
         background-color: transparent;
@@ -336,21 +317,24 @@ body {
         left: 0;
         max-height: 0;
         overflow: hidden;
-        /* top: auto; */
     }
 
-    .header-main {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.62rem 0;
+    nav .nav__wrapper a {
+        color: #FFF;
     }
 
-    .header .close-icon,
-    .header .open-icon {
-        display: flex;
+    .site-header__wrapper-top {
+        padding: .5rem 0;
     }
+
+    .header .site-header__start .brand {
+        padding: 0;
+    }
+
+
+
 }
+
 
 /*
 *
