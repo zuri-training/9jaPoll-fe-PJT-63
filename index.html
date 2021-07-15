@@ -20,11 +20,20 @@
                   /></a>
             </div>
             <div class="right">
+                <!-- <select class="search-bar" name="post-type" id="selection" onchange="getData(`https://poll9ja.herokuapp.com/api/candprofile`)">
+                    <option value="No option">Category</option>
+                    <option value="PRESIDENTIAL">PRESIDENTIAL</option>
+                    <option value="GUBERNATORIAL">GUBERNATORIAL</option>
+                    <option value="SENATORIAL">SENATORIAL</option>
+                    <option value="SENATORIAL">HOUSE OF ASSEMBLY</option>
+                </select> -->
                 <form class="search-bar">
                     <div class="btn-icon search-icon">
-                        <i class="fas fa-search"></i>
+                        <i onclick="getData(`https://poll9ja.herokuapp.com/api/candprofile`)" class="fas fa-search"></i>
                     </div>
-                    <input class="form-control" type="search" placeholder="Search">
+                    <input id="candidate" list="cand" class="form-control" type="search" placeholder="Search">
+
+                    <datalist id="cand"></datalist>
                 </form>
             </div>
         </div>
@@ -49,7 +58,7 @@
                         </ul>
                     </div>
                 </li>
-                <li> <a href="#" class="nav-link">Media</a></li>
+                <li> <a href="media and individual candidate page\media.html" class="nav-link">Media</a></li>
                 <li> <a href="#" class="nav-link last">Faq</a></li>
             </ul>
         </div>
