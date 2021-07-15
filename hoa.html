@@ -153,7 +153,7 @@
             const json = await res.json();
             console.log(json);
 
-            json.forEach(each => {
+            json.forEach((each, index) => {
               if (each.post_type == "HOUSE OF ASSEMBLY") {
                 
               
@@ -164,7 +164,7 @@
                   <figcaption>
                     <h3>${each.cand_name}</h3>
                     <h5>${each.party}</h5>
-                    <button id="${each.id}" class="more" onclick="saveid(this.id)">Read more</button>
+                    <button id="${index}" class="more" onclick="saveid(this.id)">Read more</button>
                   </figcaption>
                 </figure>`
 
