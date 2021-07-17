@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 56px;
+    text-align: center;
+}
+
+img {
+    text-align: center;
+}
+
+.about {
+    line-height: 40px;
+    letter-spacing: 4%;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+button {
+    background-color: #5CB85C;
+    color: #FFFFFF;
+    height: 56px;
+    width: 340px;
+    border: none;
+    border-radius: 40px;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.parties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 95%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    box-align: center;
+    justify-content: center;
+}
+
+.parties-grid {
+    font-weight: 400;
+}
+
+.parties-grid,
+h3 {
+    text-align: center;
+}
+
+.logo-name {
+    text-align: center;
+    font-size: 30px;
+}
+
+.party-about {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    line-height: 70px;
+    letter-spacing: 2%;
+}
+
+footer {
+    width: 100%;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background: #5CB85C;
+    color: #FFFFFF;
+    align-self: baseline;
+    /*border-top: 4px solid var(--main-red);
+*/
+}
+
+footer>p {
+    margin: 2rem;
+}
