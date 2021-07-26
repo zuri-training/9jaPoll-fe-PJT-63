@@ -21,9 +21,10 @@
                     <div class="search">
                         <form class="search-bar" action="">
                             <div class="btn-icon search-icon">
-                                <i class="fas fa-search"></i>
+                                <i onclick="getData(`https://poll9ja.herokuapp.com/api/candprofile`)" class="fas fa-search"></i>
                             </div>
-                            <input type="search" id="search" class="form-control" placeholder="search" />
+                            <input id="candidate" list="cand" type="search"  class="form-control" placeholder="search" />
+                            <datalist id="cand"></datalist>
                         </form>
                     </div>
                 </div>
@@ -37,17 +38,17 @@
               <div class="site-header__middle">
                   <nav class="nav">
                       <ul class="nav__wrapper">
-                          <li class="nav__item"><a href="#">Home</a></li>
+                          <li class="nav__item"><a href="index.html">Home</a></li>
                           <li class="nav__item"><a href="#">Political Parties</a></li>
                           <li class="nav__item sub-menu-parent"><a href="#" data-toggle="sub-menu">Electorial Candidates</a>
                             <ul class="sub-menu">
-                                <li class="nav__item"><a href="#">Presidential</a></li>
-                                <li class="nav__item"><a href="#">Gubernatorial</a></li>
-                                <li class="nav__item"><a href="#">Senatorial</a></li>
-                                <li class="nav__item"><a href="#" class="last">House of Assembly</a></li>
+                                <li class="nav__item"><a href="presidentialCandidates.html">Presidential</a></li>
+                                <li class="nav__item"><a href="gub.html">Gubernatorial</a></li>
+                                <li class="nav__item"><a href="sen.html">Senatorial</a></li>
+                                <li class="nav__item"><a href="hoa.html" class="last">House of Assembly</a></li>
                             </ul>
                           </li>
-                          <li class="nav__item"><a href="#">Media</a></li>
+                          <li class="nav__item"><a href="media and individual candidate page\media.html">Media</a></li>
                           <li class="nav__item"><a href="#" class="last">Faq</a></li>
                         </ul>
                     </nav>
